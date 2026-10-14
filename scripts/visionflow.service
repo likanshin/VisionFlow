@@ -1,0 +1,18 @@
+[Unit]
+Description=VisionFlow CPU vision server
+After=network.target
+
+[Service]
+Type=simple
+# Create an unprivileged visionflow user and install the project under /opt/visionflow.
+User=visionflow
+Group=visionflow
+WorkingDirectory=/opt/visionflow
+ExecStart=/opt/visionflow/build/release/bin/vision_server --config /opt/visionflow/configs/server.json
+Restart=on-failure
+TimeoutStopSec=15
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

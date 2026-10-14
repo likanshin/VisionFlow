@@ -1,0 +1,3 @@
+# WSL/Ubuntu can alternatively use distribution packages: python3-opencv python3-numpy.
+numpy>=1.17,<3
+opencv-python>=4.2,<5
